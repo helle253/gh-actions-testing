@@ -1,0 +1,17 @@
+on: push
+
+name: 'Test Action'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        v1: ['Value 1.1', 'Value 1.2']
+        v2: ['Value 2.1']
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Run tests
+      run: |
+        echo ${{ matrix.v1 }}, ${{ matrix.v2 }}
