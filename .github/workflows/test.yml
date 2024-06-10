@@ -8,7 +8,7 @@ jobs:
     strategy:
       matrix:
         v1: ['Value 1.1', 'Value 1.2']
-        v2: ['Value 2.1']
+        v2: ['Value 2.1', 'Value 2.2']
     steps:
     - uses: actions/checkout@v4
 
