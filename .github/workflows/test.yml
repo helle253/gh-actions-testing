@@ -9,9 +9,16 @@ jobs:
       matrix:
         v1: ['Value 1.1', 'Value 1.2']
         v2: ['Value 2.1', 'Value 2.2']
+        include:
+          - v1: 'Value 1.1'
+            anotherValue: 'Another Value'
     steps:
     - uses: actions/checkout@v4
 
     - name: Run tests
       run: |
-        echo ${{ matrix.v1 }}, ${{ matrix.v2 }}
+        echo Matrix Values:\n\
+          ${{ matrix.v1 }}\n\
+          ${{ matrix.v2 }}\n
+        echo Included Values:\n\
+          anotherValue: ${{ matrix.anotherValue || 'NONE' }}\n\n
