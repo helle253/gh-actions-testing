@@ -17,8 +17,8 @@ jobs:
 
     - name: Run tests
       run: |
-        echo "Matrix Values:\n\
+        echo -e "Matrix Values:\n\
           ${{ matrix.v1 }}\n\
           ${{ matrix.v2 }}\n"
-        echo "Included Values:\n\
+        echo -e "Included Values:\n\
           anotherValue: ${{ matrix.anotherValue || 'NONE' }}\n\n"
